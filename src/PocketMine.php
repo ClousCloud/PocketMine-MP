@@ -108,7 +108,7 @@ namespace pocketmine {
 			"openssl" => "OpenSSL",
 			"pcre" => "PCRE",
 			"phar" => "Phar",
-			"pmmpthread" => "pmmpthread",
+			"pthreads" => "pthreads",
 			"reflection" => "Reflection",
 			"sockets" => "Sockets",
 			"spl" => "SPL",
@@ -123,9 +123,9 @@ namespace pocketmine {
 			}
 		}
 
-		if(($pmmpthread_version = phpversion("pmmpthread")) !== false){
-			if(version_compare($pmmpthread_version, "6.1.0") < 0 || version_compare($pmmpthread_version, "7.0.0") >= 0){
-				$messages[] = "pmmpthread ^6.1.0 is required, while you have $pmmpthread_version.";
+		if(($pmmpthread_version = phpversion("pthread")) !== false){
+			if(version_compare($pmmpthread_version, "4.0") < 0 || version_compare($pmmpthread_version, "7.0.0") >= 0){
+				$messages[] = "pthreads ^4.0 is required, while you have $pmmpthread_version.";
 			}
 		}
 
